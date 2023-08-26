@@ -1,0 +1,38 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(165, 194, 199);
+  height: 100%;
+}
+.accordion-item {
+  background-color: rgb(226, 247, 251);
+}
+.accordion-button::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 16px;
+  background-color: red;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.accordion-button::before {
+  content: "";
+  transition: 0.3s;
+  position: absolute;
+  height: 3px;
+  width: 16px;
+  background-color: red;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+}
+.accordion-button[aria-expanded="true"]::before {
+  transform: translateY(-50%) rotate(0deg);
+}

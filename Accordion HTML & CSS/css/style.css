@@ -1,0 +1,48 @@
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+   background-color: rgb(165, 194, 199);
+}
+.container{
+    width:70%;
+    margin: auto;
+    padding-top: 50px;
+}
+details{
+    width:100%;
+    background-color:  rgb(226, 247, 251);
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 40px;
+    transition: background-color 0.75s;
+}
+details[open]{
+    background-color: white;
+}
+summary{
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+summary::after, summary::before{
+    position: absolute;
+    content:'';
+    width:16px;
+    height: 3px;
+    background-color: red; 
+    right:0;
+    top:50%;
+    transform: translateY(-50%);
+}
+summary::before{
+    transform: translateY(-50%) rotate(90deg);
+    transition: transform 0.3s;
+}
+details[open] summary::before{
+    transform: translateY(-50%) rotate(0deg);
+}
